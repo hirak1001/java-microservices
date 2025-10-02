@@ -7,7 +7,7 @@ FROM openjdk:22-jdk-slim
 LABEL "org.opencontainers.image.authors"="https://github.com/hirak1001"
 
 # Add the application's jar to the image
-COPY target/accounts-0.0.1-SNAPSHOT.jar accounts-0.0.1-SNAPSHOT.jar
+COPY target/loans-0.0.1-SNAPSHOT.jar loans-0.0.1-SNAPSHOT.jar
 
 # execute the application
-ENTRYPOINT ["java", "-jar", "accounts-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "loans-0.0.1-SNAPSHOT.jar"]
