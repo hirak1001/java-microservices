@@ -1,0 +1,18 @@
+# IDE files
+.idea/
+*.iml
+
+# Build artifacts
+target/
+build/
+
+# OS files
+.DS_Store
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Optional: Ignore specific subdirectories if needed
+base/temp/
+v1-springboot/logs/
