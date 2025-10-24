@@ -130,7 +130,7 @@
                 <version>3.4.6</version>
                 <configuration>
                     <to>
-                        <image>hirak1001/${project.artifactId}:v1</image>
+                        <image>hirak1001/${project.artifactId}:v2</image>
                     </to>
                 </configuration>
             </plugin>
