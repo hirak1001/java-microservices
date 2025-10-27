@@ -70,7 +70,7 @@
                 <version>3.4.6</version>
                 <configuration>
                     <to>
-                        <image>hirak1001/${project.artifactId}:v2</image>
+                        <image>hirak1001/${project.artifactId}:v3</image>
                     </to>
                 </configuration>
             </plugin>
