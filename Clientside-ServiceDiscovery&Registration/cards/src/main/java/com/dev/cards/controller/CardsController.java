@@ -79,6 +79,7 @@ public class CardsController {
     }
 
 
+
     @Operation(
             summary = "Fetch Card Details REST API",
             description = "REST API to fetch card details based on a mobile number"
@@ -97,11 +98,11 @@ public class CardsController {
             )
     })
     @GetMapping("/fetch")
-    public ResponseEntity<CardsDto> fetchCardDetails(@RequestParam String mobileNumber) {
+    public ResponseEntity<CardsDto> fetchCardDetails(@RequestParam
+                                                     @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits") String mobileNumber) {
         CardsDto cardsDto = iCardsService.fetchCard(mobileNumber);
         return ResponseEntity.status(HttpStatus.OK).body(cardsDto);
     }
-
 
     @Operation(
             summary = "Update Card Details REST API",
@@ -125,7 +126,7 @@ public class CardsController {
             )
     })
     @PutMapping("/update")
-    public ResponseEntity<ResponseDto> updateCardDetails(@RequestBody CardsDto cardsDto) {
+    public ResponseEntity<ResponseDto> updateCardDetails(@Valid @RequestBody CardsDto cardsDto) {
         boolean isUpdated = iCardsService.updateCard(cardsDto);
         if (isUpdated) {
             return ResponseEntity
@@ -161,7 +162,10 @@ public class CardsController {
             )
     })
     @DeleteMapping("/delete")
-    public ResponseEntity<ResponseDto> deleteCardsDetails(@RequestParam String mobileNumber) {
+    public ResponseEntity<ResponseDto> deleteCardsDetails(@RequestParam
+                                                          @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits") String mobileNumber)
+
+    {
         boolean isDeleted = iCardsService.deleteCard(mobileNumber);
         if (isDeleted) {
             return ResponseEntity
@@ -173,7 +177,6 @@ public class CardsController {
                     .body(new ResponseDto(CardsConstants.STATUS_417, CardsConstants.MESSAGE_417_DELETE));
         }
     }
-
 
 
     @Operation(
@@ -200,7 +203,6 @@ public class CardsController {
                 .status(HttpStatus.OK)
                 .body(environment.getProperty("JAVA_HOME"));
     }
-
 
 
     @Operation(
