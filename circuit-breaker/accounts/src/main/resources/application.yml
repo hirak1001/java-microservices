@@ -26,6 +26,7 @@ spring:
   config:
     import: "optional:configserver:http://localhost:8071/"
 
+#circuit breaker configuration
   cloud:
     openfeign:
       circuitbreaker:
@@ -73,6 +74,8 @@ logging:
       dev:
         loans: DEBUG
 
+
+#circuit breaker configuration
 resilience4j.circuitbreaker:
   configs:
     default:
