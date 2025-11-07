@@ -14,6 +14,10 @@ spring:
               enabled: false
               lowerCaseServiceId: true
 
+    # http timeout configuration
+      httpclient:
+          connect-timeout: 1000
+          response-timeout: 2s
 management:
   endpoints:
     web:
