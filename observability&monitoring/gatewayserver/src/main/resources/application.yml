@@ -44,6 +44,10 @@ info:
     description: "Eazy Bank Gateway Server Application"
     version: "1.0.0"
 
+metrics:
+  tags:
+    application: ${spring.application.name}
+
 logging:
   level:
     com:
